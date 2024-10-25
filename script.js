@@ -1,9 +1,10 @@
 let animalContainer = document.getElementById('animal-info');
 let btn = document.getElementById("btn");
+let pageCounter = 1;
 
 btn.addEventListener("click", function () {
      let ourRequest = new XMLHttpRequest();
-     ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+     ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + pageCounter + '.json');
      ourRequest.onload = function () {
           let ourData = JSON.parse(ourRequest.responseText);
           renderHTML(ourData);
